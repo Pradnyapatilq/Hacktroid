@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hospital Locator</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="hospital.css" />
+    <link rel="script" href="hospital.js" />
+  
+  
+  <script src="hospital.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>QR+ Emergency Health ID</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="qr.html">Generate QR</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="emergency.html">Emergency</a></li>
+      </ul>
+    </nav>
+  </header>
+  <h2>Find Hospitals & Bed Availability</h2>
+
+  <div class="search-box">
+    <input type="text" id="locationInput" placeholder="Enter your location (e.g., Delhi)">
+    <button onclick="findHospitals()">Find Hospitals</button>
+  </div>
+
+  <div id="map" style="height: 300px; border-radius: 12px; margin-bottom: 20px;"></div>
+  <div id="hospitalList"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="hospital.js"></script>
+</body>
+</html>
