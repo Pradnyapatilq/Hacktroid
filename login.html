@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate QR Code | QR+ Emergency Health ID</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --clr-primary: #6c63ff;
+      --clr-secondary: #ff6584;
+      --clr-bg: #f7f7fc;
+      --clr-white: #ffffff;
+      --clr-dark: #2e2e38;
+      --transition: 0.3s ease;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+    body { background: var(--clr-bg); color: var(--clr-dark); }
+    header {
+      background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+      padding: 1rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    header h1 { color: var(--clr-white); font-weight:700; }
+    nav ul { list-style:none; display:flex; justify-content:center; gap:1.5rem; margin-top:0.5rem; }
+    nav a { color: var(--clr-white); text-decoration:none; font-weight:500; transition:var(--transition); }
+    nav a:hover { opacity:0.8; }
+    .container {
+      max-width: 500px;
+      margin: 3rem auto;
+      background: var(--clr-white);
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--clr-primary);
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display:block;
+      margin-bottom:0.3rem;
+      font-weight:500;
+    }
+    .form-group input,
+    .form-group textarea {
+      width:100%;
+      padding:0.75rem;
+      border:1px solid #ccc;
+      border-radius:6px;
+      transition:border var(--transition);
+    }
+    .form-group input:focus,
+    .form-group textarea:focus { border-color: var(--clr-primary); outline:none; }
+    .btn-submit {
+      width:100%;
+      padding:0.75rem;
+      background: var(--clr-primary);
+      color: var(--clr-white);
+      font-size:1rem;
+      font-weight:600;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;
+      transition:var(--transition);
+    }
+    .btn-submit:hover { background: var(--clr-secondary); }
+    #qrResult {
+      margin-top:2rem;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>QR+ Emergency Health ID</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="qr.html">Generate QR</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="emergency.html">Emergency</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Generate Your Emergency QR</h2>
+    <form id="qrForm">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="blood">Blood Group *</label>
+        <input type="text" id="blood" placeholder="A+" required>
+      </div>
+      <div class="form-group">
+        <label for="problem">Medical Condition *</label>
+        <input type="text" id="problem" placeholder="Asthma, Diabetes..." required>
+      </div>
+      <div class="form-group">
+        <label for="contact">Emergency Contact *</label>
+        <input type="tel" id="contact" placeholder="+1 234 567 890" required>
+      </div>
+      <div class="form-group">
+        <label for="other">Additional Info</label>
+        <textarea id="other" rows="3" placeholder="Allergies, Medications..."></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Generate QR Code</button>
+    </form>
+    <div id="qrResult"></div>
+  </div>
+
+  <script src="qr.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
