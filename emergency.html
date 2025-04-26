@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency Actions | QR+ Health ID</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --clr-primary: #6c63ff;
+      --clr-secondary: #ff6584;
+      --clr-bg: #f7f7fc;
+      --clr-white: #ffffff;
+      --clr-dark: #2e2e38;
+      --clr-muted: #6f6f7a;
+      --transition: 0.3s ease;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body { background: var(--clr-bg); color: var(--clr-dark); }
+    header {
+      background: linear-gradient(135deg, var(--clr-primary), var(--clr-secondary));
+      padding:1rem 2rem;
+      text-align:center;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    header h1 { color: var(--clr-white); font-size:1.5rem; font-weight:700; }
+    nav ul { list-style:none; display:flex; justify-content:center; gap:1.5rem; margin-top:0.5rem; }
+    nav a { color: var(--clr-white); text-decoration:none; font-weight:500; transition:var(--transition); }
+    nav a:hover { opacity:0.8; }
+    .container {
+      max-width:800px;
+      margin:2rem auto;
+      padding:1rem;
+    }
+    .section-title {
+      text-align:center;
+      margin-bottom:2rem;
+      font-size:1.5rem;
+      color: var(--clr-primary);
+      font-weight:500;
+    }
+    .actions {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap:1.5rem;
+    }
+    .action-card {
+      background: var(--clr-white);
+      padding:1.5rem;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+      text-align:center;
+      cursor:pointer;
+      transition: transform var(--transition), box-shadow var(--transition);
+      text-decoration:none;
+      color: var(--clr-dark);
+    }
+    .action-card:hover {
+      transform: translateY(-5px);
+      box-shadow:0 6px 16px rgba(0,0,0,0.1);
+    }
+    .action-icon {
+      font-size:2rem;
+      margin-bottom:0.75rem;
+      color: var(--clr-primary);
+    }
+    .action-label {
+      font-size:1.1rem;
+      font-weight:500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Emergency Actions</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Generate QR</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="emergency.html">Emergency</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title">Quick Emergency Tools</h2>
+    <div class="actions">
+      <a href="hospital.html" class="action-card">
+        <div class="action-icon">🚑</div>
+        <div class="action-label">Locate Nearest Hospitals</div>
+      </a>
+      <div class="action-card" onclick="alert('Requesting Blood/Organ donor...')">
+        <div class="action-icon">🩸</div>
+        <div class="action-label">Request Blood/Organ Donor</div>
+      </div>
+      <div class="action-card" onclick="alert('Auto medicine delivery requested.')">
+        <div class="action-icon">📦</div>
+        <div class="action-label">Auto Medicine Delivery</div>
+      </div>
+      <a href="FIR.html" class="action-card">
+        <div class="action-icon">📝</div>
+        <div class="action-label">One Tap FIR Registration</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
